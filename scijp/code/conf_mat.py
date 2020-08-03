@@ -62,3 +62,10 @@ for i in range(10):
         plt.subplot(10,15, i*15 + j +1)
         plt.axis('off')
         plt.imshow(i_th_digit[j], interpolation='none')
+
+
+conf_mat = confusion_matrix(y_test, y_pred)
+
+df = pd.DataFrame(conf_mat,
+                columns=range(0,10),
+                index=range(0,10))
